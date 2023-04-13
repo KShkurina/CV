@@ -1,0 +1,143 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+.header {
+    width: 100%;
+    padding: 15px 0;
+
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+    color: gray;
+}
+
+.header__logo{
+    color: inherit;
+    text-decoration: none;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 1230px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.hero__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-gap: 20px;
+}
+
+.hero__about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero__title {
+    margin-bottom: 20px;
+    font-size: 48px;
+    
+    line-height: 1.1;
+}
+
+.hero__subtitle {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.hero__links {
+    display: flex;
+}
+
+.hero__link {
+    margin-right: 10px;
+
+    font-size: 30px;
+    color: #000;
+
+    transition: 0.3s;
+}
+
+.hero__link:hover {
+    color: #4facfe;
+}
+
+.hero__box {
+    min-width: 500px;
+    justify-self: center;
+    overflow: hidden;
+    /* background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%); */
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+
+    border: 1px solid #fff;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    animation: ava-amimate 6s infinite alternate;
+}
+.hero__box-img {
+    animation: ava-bg 6s infinite alternate;
+}
+
+@keyframes ava-amimate {
+    0% {
+        border-radius: 17% 83% 11% 89% / 82% 12% 88% 18%  ;
+    }
+    20% { 
+        border-radius: 17% 83% 11% 89% / 67% 33% 67% 33%  ;
+    }
+    /* 40% {
+        border-radius: 32% 68% 36% 64% / 67% 33% 67% 33% ;
+    } */
+    60% {
+        border-radius: 32% 68% 36% 64% / 39% 53% 47% 61%    ;
+    }
+    80% {
+        border-radius: 63% 37% 61% 39% / 39% 53% 47% 61%  ;
+    }
+    100% {
+        border-radius: 63% 37% 61% 39% / 11% 67% 33% 89%  ;
+    }
+}
+
+@keyframes ava-bg {
+    from {
+        backdrop-filter: hue-rotate(0);
+    }
+    to {
+        backdrop-filter: hue-rotate(90deg);
+    }
+}
+
+@media (max-width: 1027px) {
+    .hero__container {
+        grid-template-columns: 1fr; /* Изменяем количество колонок на 1 для мобильных устройств */
+    }
+}
